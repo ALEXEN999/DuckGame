@@ -16,6 +16,7 @@ public class Pato {
     private int dirX, dirY;
     private int index = 0;
     private boolean estaMuerto = false;
+    private int direction;
 
     public Pato() {
         this.posX = 0.0f;
@@ -69,21 +70,30 @@ public class Pato {
         if(getBoundary().contains(p)) return true;
         else return false;
     }
+    public void move() {
+        this.posX = Math.random()*1000;
+        this.posY = Math.random()*500;
+    }
+    public void setDirection(int direction) {
+        this.direction = direction;
 
-    public void setDirection(String direction) {
         switch (direction) {
-            case "RIGHT":
+            case 0://"RIGHT"
                 moveRight();  break;
-            case "LEFT":
+            case 1://"LEFT"
                 moveLeft();
                 break;
-            case "DOWN":
-                moveDown();
-                break;
-            case "UP":
+            case 2://"UP"
                 moveUp();
                 break;
+            case 3://"DOWN"
+                moveDown();
+                break;
         }
+    }
+
+    public int getDirection() {
+        return direction;
     }
 
     public boolean getEstaMuerto() {

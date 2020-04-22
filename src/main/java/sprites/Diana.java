@@ -25,7 +25,10 @@ public class Diana {
         height = image.getHeight();
     }
 
-
+    public void move() {
+        this.posX = Math.random()*1000;
+        this.posY = Math.random()*290;
+    }
     /**
      * Netejar la zona que ocupa l'objecte dins del graphicsContext
      * Al clearRect li passem la posició i les mides de la imatge.
