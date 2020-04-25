@@ -64,19 +64,17 @@ public class MainWindow implements Initializable {
 
             }else {//movimientos random
                 pato.clear(gc);
+                pato.setNUM_SPRITES(3);
 
 
                 if (pato.getDirection()==0){//derecha
                     pato.setDirection(0);
-                    pato.setNUM_SPRITES(3);
                     pato.setImage(new Image("images/pato-perfil-derecha.png"));
                 } else if (pato.getDirection()==1){//izquierda
                     pato.setDirection(1);
-                    pato.setNUM_SPRITES(3);
                     pato.setImage(new Image("images/pato-perfil-izquierda.png"));
                 } else if (pato.getDirection()==2){//arriba
                     pato.setDirection(2);
-                    pato.setNUM_SPRITES(3);
                     pato.setImage(new Image("images/pato-arriba-1.png"));
                 }
 

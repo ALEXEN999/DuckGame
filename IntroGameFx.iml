@@ -21,6 +21,5 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:11" level="project" />
-    <orderEntry type="library" name="javafx-swt" level="project" />
   </component>
 </module>
