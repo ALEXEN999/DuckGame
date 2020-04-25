@@ -32,7 +32,6 @@ import java.util.ResourceBundle;
 public class MainWindow implements Initializable {
     private Scene scene;
     private GraphicsContext gc;
-    MainWindow mainWindow;
     private Diana diana;
     private Pato pato;
     private Dashboard dashboard;
@@ -60,6 +59,7 @@ public class MainWindow implements Initializable {
                 dashboard.render(gc);
                 diana.render(gc);
                 pato.render(gc);
+                paintScore();
 
 
             }else {//movimientos random
@@ -83,6 +83,8 @@ public class MainWindow implements Initializable {
                 dashboard.render(gc);
                 diana.render(gc);
                 pato.render(gc);
+                paintScore();
+
 
 
             }
@@ -94,12 +96,24 @@ public class MainWindow implements Initializable {
                 dashboard.render(gc);
                 pato.move();
                 pato.render(gc);
+                paintScore();
                 pato.setDirection((int) (Math.random()*3));
                 timelinePato.play();
+
             }
         }
     })
     );
+
+    private void paintScore() {
+        String pointsText = "SCORE: " + points;
+
+        gc.setFill( Color.WHITE );
+        gc.fillText( pointsText, 680, 682 );
+
+        gc.setStroke( Color.WHITE );
+        gc.strokeText( pointsText, 680, 682 );
+    }
 
 
     @FXML
@@ -120,10 +134,8 @@ public class MainWindow implements Initializable {
         pato = new Pato();
         gc = mainCanvas.getGraphicsContext2D();
 
-        dashboard.render(gc);
         diana.render(gc);
 
-        pointsText = "SCORE: " + points;
 
         gc.setFont(new Font("Arial",16));
 
@@ -131,6 +143,8 @@ public class MainWindow implements Initializable {
 
         timelinePato.play();
         audioClip.play();
+
+        dashboard.render(gc);
 
 
 
